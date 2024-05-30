@@ -1,0 +1,8 @@
+./bin/calc: ./obj/calc.o ./obj/calc_functions.o
+	gcc -Wall -g -o ./bin/calc ./obj/calc.o ./obj/calc_functions.o
+./obj/calc.o: ./src/calc.c
+	gcc -c -I ./include ./src/calc.c
+	mv *.o ./obj
+./obj/calc_functions.o: ./src/calc_functions.c
+	gcc -c -I ./include ./src/calc_functions.c
+	mv *.o ./obj
